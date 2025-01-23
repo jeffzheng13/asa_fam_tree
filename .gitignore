@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# google sheets
+asa-fam-tree-spreadsheet-f9380481f143.json
