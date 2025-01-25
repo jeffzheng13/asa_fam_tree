@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { cn } from "@/lib/utils";
-import { toast } from "@/components/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -48,8 +47,6 @@ export function ComboboxForm({ data = [], updateState }: { data: UserID[], updat
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-
-  const router = useRouter();
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log("clicked");

@@ -26,7 +26,8 @@ async function retrieveConnectionLinks() {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const ancestor = searchParams.get('poiID');
-
+  console.log(ancestor);
+  
   const result = await retrieveConnectionLinks();
 
   const resultMapped: Connection[] = result.map((x) => ({
