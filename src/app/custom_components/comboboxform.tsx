@@ -37,11 +37,6 @@ const FormSchema = z.object({
   poiID: z.string().optional(),
 });
 
-type UserID = {
-  id: string;
-  name: string;
-};
-
 export function ComboboxForm({ data = [], updateState }: { data: UserID[], updateState: (arg0: string) => void }) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),

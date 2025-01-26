@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ComboboxForm } from "./custom_components/comboboxform";
 import { useEffect, useState } from "react";
+import FamTree from "./custom_components/d3network";
 
 export default function Home() {
   const [userList, setUserList] = useState([]);
@@ -38,8 +39,7 @@ export default function Home() {
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            Find your ancestor in the dropdown list thru their Pitt email or
-            name.
+            Find your ancestor in the dropdown list thru their first and name.
           </li>
           <li>Click the button to visualize your family tree now!</li>
         </ol>
@@ -52,55 +52,8 @@ export default function Home() {
         </div>
 
         {/* generate and display graph */}
-        {displayGraph ? <div>{poiID}</div> : null}
+        {displayGraph ? <div><FamTree poiID={poiID} userIDList={userList} /></div> : null}
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
