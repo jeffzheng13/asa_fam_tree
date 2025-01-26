@@ -37,7 +37,7 @@ export async function GET() {
     name: x.get("name"),
   }));
 
-  return NextResponse.json(resultMapped);
+  return NextResponse.json(resultMapped.sort((a, b) => a.name.localeCompare(b.name)));
   
 }
 
