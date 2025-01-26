@@ -29,6 +29,7 @@ export default function Home() {
   const navigateToWebsite = () => {
     window.open("https://www.pittasa.com")
   }
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -46,6 +47,7 @@ export default function Home() {
             Find your ancestor in the dropdown list thru their first and name.
           </li>
           <li>Click the button to visualize your family tree now!</li>
+          <li>To add more to your family tree, fill out the form <a className="hover:underline" href="https://forms.gle/C4PuW5T1Ranbjq2K8">here.</a></li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
@@ -59,7 +61,7 @@ export default function Home() {
         {displayGraph ? <div><FamTree poiID={poiID} userIDList={userList} /></div> : null}
       </main>
       <footer className="flex row-start-3 gap-6 flex-wrap items-center justify-center">
-        <p>Made with <span style={{ color: "#e25555" }}>❤</span> by <a href="https://github.com/jeffzheng13">Jeffrey Zheng</a></p>
+        <p>Made with <span style={{ color: "#e25555" }}>❤</span> by <a className="hover:underline" href="https://github.com/jeffzheng13">Jeffrey Zheng</a></p>
       </footer>
     </div>
   );
