@@ -46,8 +46,8 @@ export default function Home() {
           <li className="mb-2">
             Find your ancestor in the dropdown list thru their first and name.
           </li>
-          <li>Click the button to visualize your family tree now!</li>
-          <li>To add more to your family tree, fill out the form <a className="hover:underline" href="https://forms.gle/C4PuW5T1Ranbjq2K8">here.</a></li>
+          <li className="mb-2">Click the button to visualize your family tree now!</li>
+          <li className="mb-2">To add more to your family tree, fill out the form: <a className="underline" href="https://forms.gle/C4PuW5T1Ranbjq2K8">here</a>.</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
