@@ -122,6 +122,9 @@ export async function GET(request: Request) {
   dfs(head!, visited, path, paths);
   console.log(paths);
 
+  //add [head] to paths to ensure root displays when rendering plot
+  paths.push([head!])
+
   return NextResponse.json(paths);
 }
 

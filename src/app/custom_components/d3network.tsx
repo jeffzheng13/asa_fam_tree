@@ -24,7 +24,7 @@ export default function FamTree({
           return element.join("/");
         });
         console.log(processedData)
-        setData(processedData);
+        setData(processedData.sort());
       });
   }, [poiID, userIDList]);
 
@@ -36,7 +36,7 @@ export default function FamTree({
       margin: 10,
       marginLeft: 120,
       marginRight: 120,
-      marks: [Plot.tree(data)],
+      marks: [Plot.tree(data, {delimiter: "/"})],
     });
     if (containerRef.current) {
       containerRef.current.append(plot);
