@@ -36,6 +36,7 @@ export default function FamTree({
       margin: 10,
       marginLeft: 120,
       marginRight: 120,
+      width: 1200,
       marks: [Plot.tree(data, { delimiter: "/" })],
     });
     if (containerRef.current) {
